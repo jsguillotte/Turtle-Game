@@ -15,7 +15,7 @@ class Seagull {
 
     //create the HTML element and default styling
     this.element = document.createElement('img')
-    this.element.src = './images/seagull.png';
+    this.element.src = 'docs/images/seagull.png';
     this.element.style.position = 'absolute'
     this.element.style.top = `${this.top}px`
     this.element.style.left = `${this.left}px`
@@ -56,7 +56,7 @@ class Obstacle {
 
     //create the HTML element and default styling
     this.element = document.createElement('img')
-    this.element.src = './images/bossbaby.png';
+    this.element.src = 'docs/images/bossbaby.png';
     this.element.style.position = 'absolute'
     this.element.style.top = `${this.top}px`
     this.element.style.left = `${this.left}px`
@@ -95,7 +95,7 @@ class Dog {
 
     //create the HTML element and default styling
     this.element = document.createElement('img')
-    this.element.src = './images/dog.png';
+    this.element.src = 'docs/images/dog.png';
     this.element.style.position = 'absolute'
     this.element.style.top = `${this.top}px`
     this.element.style.right = `${this.right}px`
@@ -136,7 +136,7 @@ class Cup {
 
     //create the HTML element and default styling
     this.element = document.createElement('img')
-    this.element.src = './images/cup.png';
+    this.element.src = 'docs/images/cup.png';
     this.element.style.position = 'absolute'
     this.element.style.top = `${this.top}px`
     this.element.style.left = `${this.left}px`
@@ -175,7 +175,7 @@ class Cup2 {
 
     //create the HTML element and default styling
     this.element = document.createElement('img')
-    this.element.src = './images/cup.png';
+    this.element.src = 'docs/images/cup.png';
     this.element.style.position = 'absolute'
     this.element.style.top = `${this.top}px`
     this.element.style.left = `${this.left}px`
@@ -214,7 +214,7 @@ class Trash {
 
     //create the HTML element and default styling
     this.element = document.createElement('img')
-    this.element.src = './images/Trash.png';
+    this.element.src = 'docs/images/Trash.png';
     this.element.style.position = 'absolute'
     this.element.style.top = `${this.top}px`
     this.element.style.left = `${this.left}px`
@@ -252,7 +252,7 @@ class Trash2 {
 
     //create the HTML element and default styling
     this.element = document.createElement('img')
-    this.element.src = './images/Trash.png';
+    this.element.src = 'docs/images/Trash.png';
     this.element.style.position = 'absolute'
     this.element.style.top = `${this.top}px`
     this.element.style.left = `${this.left}px`
@@ -291,7 +291,7 @@ class StarBlue {
 
     //create the HTML element and default styling
     this.element = document.createElement('img')
-    this.element.src = './images/starfish.webp';
+    this.element.src = 'docs/images/starfish.webp';
     this.element.style.position = 'absolute'
     this.element.style.top = `${this.top}px`
     this.element.style.left = `${this.left}px`
@@ -332,7 +332,7 @@ class StarRed {
 
     //create the HTML element and default styling
     this.element = document.createElement('img')
-    this.element.src = './images/redStar.png';
+    this.element.src = 'docs/images/redStar.png';
     this.element.style.position = 'absolute'
     this.element.style.top = `${this.top}px`
     this.element.style.left = `${this.left}px`
@@ -374,7 +374,7 @@ class Net {
 
     //create the HTML element and default styling
     this.element = document.createElement('img')
-    this.element.src = './images/net2.png';
+    this.element.src = 'docs/images/net2.png';
     this.element.style.position = 'absolute'
     this.element.style.top = `${this.top}px`
     this.element.style.left = `${this.left}px`

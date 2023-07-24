@@ -21,7 +21,7 @@ body {
     padding: 20px 0px;
     overflow: hidden;
     position: relative;
-    background-image: url(../images/Beach.png);
+    background-image: url(/docs/images/Beach.png);
     background-size: cover;
     /*animation: slide 5s linear infinite;*/
   }
@@ -45,12 +45,12 @@ body {
     padding: 400px 0px;
     overflow: hidden;
     position: relative;
-    background-image: url(../images/GameOver.jpeg);
+    background-image: url(/docs/images/GameOver.jpeg);
     background-size: contain;
     background-repeat: no-repeat;
   }
   .game-intro {
-    background-image: url(../images/Intro.jpeg);
+    background-image: url(/docs/images/Intro.jpeg);
     background-size: contain;
     padding: 300px 200px;
   }

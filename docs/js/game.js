@@ -11,7 +11,7 @@ class Game {
 
         // player
         this.player = new Player(
-            this.gameScreen, 400, 700, 50, 75, "./images/turtle.png"
+            this.gameScreen, 400, 700, 50, 75, "docs/images/turtle.png"
         );
 
         // style for the game board
