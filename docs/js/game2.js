@@ -1,15 +1,14 @@
-class Game {
+class Game2 {
     // a function that is going to be called any time that we create an object via class
 
     // it's useful to store all the properties that belong to the future object.
     constructor(){
         // get all the possible screens
         // game-screen and game-end are initially hidden
-        this.startScreen = document.getElementById('game-info');
+        this.startScreen = document.getElementById('info-hard');
         this.gameScreen = document.getElementById('game-screen')
         this.gameEndScreen = document.getElementById('game-end')
         this.gameWinScreen = document.getElementById('game-win')
-        //this.starAudio = new Audio("/docs/audio/star-sound.mp3")
 
         // player
         this.player = new Player(
@@ -56,11 +55,8 @@ class Game {
 
         // gameOver flag
         this.gameOver = false;
-        this.starAudio = new Audio("./docs/audio/star-sound.mp3")
     
     }
-
-     
 
     start() {
         // Set the height and width of the game screen
@@ -76,13 +72,10 @@ class Game {
         setInterval(()=>{
             return this.score--
         }, 1000)
-
-         this.backgroundMusic = document.createElement('audio');
+        this.backgroundMusic = document.createElement('audio');
         this.backgroundMusic.src = "./docs/audio/gametrack.mp3"
         this.gameScreen.appendChild(this.backgroundMusic)
         this.backgroundMusic.play()
-
-       
 
         //Start the Game Loop
         this.gameLoop()
@@ -111,8 +104,6 @@ class Game {
 
         let score = document.getElementById('timer')
         let lives = document.getElementById('lives')
-
-       
 
         score.innerHTML = this.score
         lives.innerHTML = this.lives
@@ -158,7 +149,7 @@ class Game {
 
         }
 
-      /* for (let i=0; i < this.seagulls.length; i++){
+       for (let i=0; i < this.seagulls.length; i++){
             const seagull = this.seagulls[i]
             seagull.move()
             
@@ -182,7 +173,7 @@ class Game {
 
             }
 
-        }    */
+        }    
 
 
         for (let i=0; i < this.dogs.length; i++){
@@ -315,15 +306,12 @@ class Game {
             //Check if the player collided with an obstacle
             if (this.player.didCollide(bStar)){
                 //remove the obstacle from the DOM
-                
-                
                 bStar.element.remove()     
 
                 //remove obstacle from the array
                 this.bstars.splice(i,1)
 
                 //reduce player's live by 1
-                this.starAudio.play()
                 this.score+=5
                 
  
@@ -334,7 +322,7 @@ class Game {
             }
 
         } 
-/*
+
         for (let i=0; i < this.rstars.length; i++){
             const rStar = this.rstars[i]
             rStar.move()
@@ -382,7 +370,7 @@ class Game {
             } 
 
         }  
-*/
+
 
         //Update Obstacles
         if(!this.obstacles.length && !this.isPushingObstacle) {
@@ -393,13 +381,13 @@ class Game {
             }, 100)
         }
 
-       /* if(!this.seagulls.length && !this.isPushingSeagull) {
+        if(!this.seagulls.length && !this.isPushingSeagull) {
             this.isPushingSeagull = true;
             setTimeout(()=>{
                 this.seagulls.push(new Seagull(this.gameScreen))
                 this.isPushingSeagull = false
             }, 100)
-        } */
+        }
 
         if(!this.dogs.length && !this.isPushingDog) {
             this.isPushingDog = true;
@@ -456,7 +444,7 @@ class Game {
             }, 7000)
         }
 
-    /*    if(!this.rstars.length && !this.isPushingRstar) {
+        if(!this.rstars.length && !this.isPushingRstar) {
             this.isPushingRstar = true;
             setTimeout(()=>{
                 this.rstars.push(new StarRed(this.gameScreen))
@@ -474,7 +462,7 @@ class Game {
                 this.isPushingNet = false
             }, 100)
         }
-   */
+
 
 
 
@@ -521,5 +509,4 @@ class Game {
         this.gameWinScreen.style.display = "block"
     }
 
-} 
-
+}

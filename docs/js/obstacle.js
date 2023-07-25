@@ -90,8 +90,8 @@ class Dog {
     //appear on the left
 
     this.right = 0;
-    this.width = 60;
-    this.height = 110;
+    this.width = 90;
+    this.height = 130;
 
     //create the HTML element and default styling
     this.element = document.createElement('img')
@@ -111,7 +111,7 @@ class Dog {
     }
 
     move(){
-        this.right += 3;
+        this.right += 4;
         this.updatePosition()
     }
 
@@ -119,7 +119,7 @@ class Dog {
 
 }
 
-class Cup {
+class Cat {
     constructor(gameScreen){
         this.gameScreen = gameScreen;
 
@@ -130,13 +130,13 @@ class Cup {
 
     //appear on the left
 
-    this.left = 150;
-    this.width = 80;
-    this.height = 100;
+    this.right =  0;
+    this.width = 90;
+    this.height = 130;
 
     //create the HTML element and default styling
     this.element = document.createElement('img')
-    this.element.src = 'docs/images/cup.png';
+    this.element.src = 'docs/images/Cat.png';
     this.element.style.position = 'absolute'
     this.element.style.top = `${this.top}px`
     this.element.style.left = `${this.left}px`
@@ -147,12 +147,12 @@ class Cup {
     }
 
     updatePosition(){
-        this.element.style.left = `${this.left}px`
+        this.element.style.right = `${this.right}px`
         this.element.style.top = `${this.top}px`
     }
 
    move(){
-        this.left += 0;
+        this.right += 3;
         this.updatePosition()
     }
     
@@ -164,12 +164,13 @@ class Cup2 {
 
         //random position for the appearance of the obstacles
         this.top = Math.floor((Math.random()*500+100))
+        this.right = Math.floor((Math.random()*800+100))
 
     
 
     //appear on the left
 
-    this.right = 100;
+    
     this.width = 80;
     this.height = 100;
 
@@ -186,7 +187,7 @@ class Cup2 {
     }
 
     updatePosition(){
-        this.element.style.left = `${this.left}px`
+        this.element.style.right = `${this.right}px`
         this.element.style.top = `${this.top}px`
     }
 
@@ -203,12 +204,13 @@ class Trash {
 
         //random position for the appearance of the obstacles
         this.top = Math.floor((Math.random()*500+100))
+        this.right = Math.floor((Math.random()*800+100))
 
     
 
     //appear on the right
 
-    this.right = 150;
+    
     this.width = 100;
     this.height = 60;
 
@@ -225,7 +227,7 @@ class Trash {
     }
 
     updatePosition(){
-        this.element.style.left = `${this.left}px`
+        this.element.style.right = `${this.right}px`
         this.element.style.top = `${this.top}px`
     }
 
@@ -241,19 +243,20 @@ class Trash2 {
 
         //random position for the appearance of the obstacles
         this.top = Math.floor((Math.random()*500+100))
+        this.left=Math.floor((Math.random()*800+100))
 
     
 
     //appear on the left
 
-    this.left = 200;
-    this.right = 200;
+   // this.left = 200;
+   // this.right = 200;
     this.width = 100;
-    this.height = 60;
+    this.height = 80;
 
     //create the HTML element and default styling
     this.element = document.createElement('img')
-    this.element.src = 'docs/images/Trash.png';
+    this.element.src = 'docs/images/shoe.png';
     this.element.style.position = 'absolute'
     this.element.style.top = `${this.top}px`
     this.element.style.left = `${this.left}px`
@@ -363,7 +366,7 @@ class Net {
 
         //random position for the appearance of the obstacles
         this.left = Math.floor((Math.random()*800+150))
-        this.top = Math.floor((Math.random()*400)+150)
+        this.top = Math.floor((Math.random()*600)+150)
         
         
 
@@ -387,11 +390,11 @@ class Net {
     this.gameScreen.appendChild(this.element)
     }
 
-  /*  updatePosition(){
+  updatePosition(){
         this.element.style.left = `${this.left}px`
         this.element.style.top = `${this.top}px`
     }
-
+/*
     move(){
         this.top += 0;
         this.updatePosition()

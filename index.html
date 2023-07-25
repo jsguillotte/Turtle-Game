@@ -5,23 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="docs/styles/style.css" />
+    
     <title>Turtles vs Babies</title>
   </head>
   <body>
     <main>
       <!-- #game-intro is initially shown on the game start screen -->
+    
+      
+      
+
       <div id="game-intro">
+
+       <!-- <audio autoplay loop id="audioID">
+          <source src="docs/audio/BeachMusic.mp3" type="audio/mp3">
+        </audio> -->
        
         <button id="easy">Easy</button>
         <button id="hard">Hard</button>
+
+       
+
+         
+
+       
         
       </div>
+      <div id="info-hard">
+        
+        <button id="start-button-hard">start</button>
+       
+       </div>
+
       <div id="game-info">
+        
         <!-- <img src="./images/GameOver.jpeg" alt="" class="logo-img" /> 
        <h1>Game Over</h1> -->
  
       
         <button id="start-button">start</button>
+       
+       </div>
+       <div id="info-hard">
+        
+        <button id="start-button-hard">start</button>
        
        </div>
 
@@ -32,10 +59,12 @@
 
         <div id="stats">
           
-          <p>Timer: <span id="timer">30</span></p>
-          <p>Lives: <span id="lives">3</span></p>
+          <p><img src="docs/images/starfish.webp" alt="blue-star" id="time"> <span id="timer">30</span></p>
+          <p><img src="docs/images/redStar.png" alt="red-star" id="live"> <span id="lives">3</span></p>
         </div>
+
         
+      
       
       </div>
 
@@ -64,5 +93,6 @@
     <script type="text/javascript" src="docs/js/game.js"></script>
     <script type="text/javascript" src="docs/js/script.js"></script>
     <script type ="text/javascript" src="docs/js/obstacle.js"></script>
+    <script type="text/javascript" src="docs/js/game2.js"></script>
   </body>
 </html>

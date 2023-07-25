@@ -78,6 +78,17 @@ body {
     padding: 420px 0;
   }
 
+  #info-hard {
+    display: none;
+    background-image: url(/docs/images/info-hard.jpeg);
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 420px 0;
+  }
+
+
+
   #game-win {
     display: none;
     width: 100%;
@@ -134,6 +145,17 @@ body {
     position: absolute;
     top: 700px;
     left: 650px;
+  }
+  #start-button-hard {
+    position: absolute;
+    top: 700px;
+    left: 650px;
+  }
+
+  #live, #time{
+    width: 30px;
+    height: 30px
+  
   }
 
   

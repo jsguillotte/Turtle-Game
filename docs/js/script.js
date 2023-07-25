@@ -1,6 +1,11 @@
 window.onload = function () {
+    
+    //const myaudio = document.getElementById('audioID'.autoplay)= true
+
+    const hardButton = document.getElementById("hard")
     const easyButton = document.getElementById("easy")
     const startButton = document.getElementById("start-button");
+    const startHButton = document.getElementById("start-button-hard")
     const restartButton = document.getElementById("restart-button");
     const winButton = document.getElementById("win-button")
     easyButton.addEventListener('click', function() {
@@ -8,12 +13,22 @@ window.onload = function () {
       document.getElementById('game-info').style.display = 'block';
       
     })
+    hardButton.addEventListener("click", function(){
+      document.getElementById('game-intro').style.display = 'none';
+      document.getElementById("info-hard").style.display = 'block'
+    })
   
     startButton.addEventListener("click", function () {
       startGame();
     });
+
+    startHButton.addEventListener("click", function () {
+      startGame2();
+    });
+
   
     let game;
+    
   
     restartButton.addEventListener('click', function(){
       location.reload()
@@ -23,9 +38,14 @@ window.onload = function () {
     })
    
   
-    function startGame() {
+   function startGame() {
       console.log("start game");
       game = new Game()
+      game.start()
+    }
+    function startGame2() {
+      console.log('start game');
+      game = new Game2()
       game.start()
     }
       //Function that handles keydown events
