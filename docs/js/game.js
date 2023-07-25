@@ -57,6 +57,9 @@ class Game {
         // gameOver flag
         this.gameOver = false;
         this.starAudio = new Audio("./docs/audio/star-sound.mp3")
+        this.bossAudio = new Audio("./docs/audio/bossBaby-sound.mp3")
+        this.catAudio = new Audio("./docs/audio/cat-sound.mp3")
+        this.dogAudio = new Audio("./docs/audio/dog-sound.mp3")
     
     }
 
@@ -141,6 +144,7 @@ class Game {
                 this.obstacles.splice(i,1)
 
                 //reduce player's live by 1
+                this.bossAudio.play()
                 this.lives --
                 
 
@@ -200,6 +204,7 @@ class Game {
                 this.dogs.splice(i,1)
 
                 //reduce player's live by 1
+                this.dogAudio.play()
                 this.lives --
                 
  
@@ -226,6 +231,7 @@ class Game {
                 this.cats.splice(i,1)
 
                 //reduce player's live by 1
+                this.catAudio.play()
                 this.lives --
                 
  
