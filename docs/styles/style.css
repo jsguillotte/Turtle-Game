@@ -67,7 +67,7 @@ body {
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 400px 0;
+    padding: 420px 0;
   }
   #game-info {
     display: none;
@@ -75,7 +75,7 @@ body {
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 400px 0;
+    padding: 420px 0;
   }
 
   #game-win {
