@@ -3,21 +3,36 @@ html {
 }
 body {
     padding: 0;
+    margin: 0;
     text-align: center;
+    background-image: url(/docs/images/Beach.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+    
   }
   
   
   
   #game-container {
     display: flex;
-    width: 100vw;
+    width: 100%;
     padding: 20px 0px;
     justify-content: center;
+  }
+  #stats {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 15px;
+
+
   }
   
   #game-screen {
     display: none;
     align-content: center;
+    width: 100%;
     padding: 20px 0px;
     overflow: hidden;
     position: relative;
@@ -41,36 +56,85 @@ body {
   
   #game-end {
     display: none;
-    align-content: center;
-    padding: 400px 0px;
-    overflow: hidden;
-    position: relative;
+    width: 100%;
+    padding: 380px;
     background-image: url(/docs/images/GameOver.jpeg);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
   }
-  .game-intro {
+  #game-intro {
     background-image: url(/docs/images/Intro.jpeg);
-    background-size: contain;
-    padding: 300px 200px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 400px 0;
   }
-  .game-intro p {
-    font-size: 18px;
-    font-family: "Verdana";
+  #game-info {
+    display: none;
+    background-image: url(/docs/images/game-info.jpeg);
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 400px 0;
   }
-  
+
+  #game-win {
+    display: none;
+    width: 100%;
+    padding: 380px;
+    background-image: url(/docs/images/game-win.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+ 
   
   
   
   
   body button {
     font-size: 15px;
-    background-color: #005a87;
+    background-color: #97bed1;
     color: #fff;
-    padding: 10px 40px;
+    text-transform: uppercase;
+    padding: 10px 50px;
     border: 0;
     box-shadow: 0;
     border-radius: 5px;
     margin-bottom: 20px;
+    position: relative;
   }
+  #restart-button{
+    position: absolute;
+    top: 70%;
+    left: 50%
+  }
+  #win-button{
+    position: absolute;
+    top: 600px;
+    left: 650px;
+  }
+
+  
+   #hard {
+    position: absolute;
+    top: 70%;
+    left: 60%;
+
+    
+  }
+  #easy {
+    position: absolute;
+    top: 70%;
+    left: 40%;
+
+    
+  }
+
+  #start-button {
+    position: absolute;
+    top: 700px;
+    left: 650px;
+  }
+
+  
   

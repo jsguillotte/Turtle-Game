@@ -51,8 +51,8 @@ class Obstacle {
     //appear on the left
 
     this.left = 0;
-    this.width = 80;
-    this.height = 140;
+    this.width = 100;
+    this.height = 160;
 
     //create the HTML element and default styling
     this.element = document.createElement('img')
@@ -72,7 +72,7 @@ class Obstacle {
     }
 
     move(){
-        this.left += 1;
+        this.left += 3;
         this.updatePosition()
     }
 
@@ -111,7 +111,7 @@ class Dog {
     }
 
     move(){
-        this.right += 2;
+        this.right += 3;
         this.updatePosition()
     }
 
@@ -246,7 +246,8 @@ class Trash2 {
 
     //appear on the left
 
-    this.left = 100;
+    this.left = 200;
+    this.right = 200;
     this.width = 100;
     this.height = 60;
 
@@ -361,14 +362,16 @@ class Net {
         this.gameScreen = gameScreen;
 
         //random position for the appearance of the obstacles
-        this.left = Math.floor((Math.random()*600+100))
-        this.top =Math.floor(Math.random()*500+100)
+        this.left = Math.floor((Math.random()*800+150))
+        this.top = Math.floor((Math.random()*400)+150)
+        
+        
 
     
 
     //appear on top
 
-    this.top = 150;
+    
     this.width = 100;
     this.height = 100;
 
@@ -384,7 +387,7 @@ class Net {
     this.gameScreen.appendChild(this.element)
     }
 
-    updatePosition(){
+  /*  updatePosition(){
         this.element.style.left = `${this.left}px`
         this.element.style.top = `${this.top}px`
     }
@@ -393,7 +396,7 @@ class Net {
         this.top += 0;
         this.updatePosition()
     }
-
+*/
 
 
 }

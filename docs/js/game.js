@@ -5,19 +5,20 @@ class Game {
     constructor(){
         // get all the possible screens
         // game-screen and game-end are initially hidden
-        this.startScreen = document.getElementById('game-intro');
+        this.startScreen = document.getElementById('game-info');
         this.gameScreen = document.getElementById('game-screen')
         this.gameEndScreen = document.getElementById('game-end')
+        this.gameWinScreen = document.getElementById('game-win')
 
         // player
         this.player = new Player(
-            this.gameScreen, 400, 700, 50, 75, "docs/images/turtle.png"
+            this.gameScreen, 700, 700, 50, 75, "docs/images/turtle.png"
         );
 
         // style for the game board
 
-        this.width = 1000
-        this.height = 700
+        this.width = 1400
+        this.height = 800
 
         // obstacles
         this.obstacles = []
@@ -47,7 +48,7 @@ class Game {
         //{trees: [], rocks: []}
 
         // score
-        this.score = 3;
+        this.score = 30;
 
         // lives
         this.lives = 3;
@@ -104,8 +105,10 @@ class Game {
         score.innerHTML = this.score
         lives.innerHTML = this.lives
 
-        if(this.lives === 0 || this.score === 0) {
+        if(this.lives === 0 || this.score <= 0) {
             this.endGame()
+        } else if (this.player.top < 35) {
+            this.winGame()
         }
 
         this.player.move()
@@ -222,7 +225,7 @@ class Game {
 
         }  
 
-        for (let i=0; i < this.cups.length; i++){
+        for (let i=0; i < this.cups2.length; i++){
             const cup2 = this.cups2[i]
             cup2.move()
             
@@ -345,7 +348,7 @@ class Game {
 
         for (let i=0; i < this.nets.length; i++){
             const net = this.nets[i]
-            net.move()
+            //net.move()
             
 
 
@@ -395,6 +398,7 @@ class Game {
             this.isPushingCup = true;
             setTimeout(()=>{
                 this.cups.push(new Cup(this.gameScreen))
+                this.cups.push(new Cup(this.gameScreen))
                 this.isPushingCup = false
             }, 100)
         }
@@ -402,6 +406,7 @@ class Game {
         if(!this.cups2.length && !this.isPushingCup2) {
             this.isPushingCup2 = true;
             setTimeout(()=>{
+                this.cups2.push(new Cup2(this.gameScreen))
                 this.cups2.push(new Cup2(this.gameScreen))
                 this.isPushingCup2 = false
             }, 100)
@@ -412,6 +417,7 @@ class Game {
             this.isPushingTrash = true;
             setTimeout(()=>{
                 this.trashes.push(new Trash(this.gameScreen))
+                this.trashes.push(new Trash(this.gameScreen))
                 this.isPushingTrash = false
             }, 100)
         } 
@@ -419,6 +425,7 @@ class Game {
         if(!this.trashes2.length && !this.isPushingTrash2) {
             this.isPushingTrash2 = true;
             setTimeout(()=>{
+                this.trashes2.push(new Trash2(this.gameScreen))
                 this.trashes2.push(new Trash2(this.gameScreen))
                 this.isPushingTrash2 = false
             }, 100)
@@ -443,6 +450,9 @@ class Game {
         if(!this.nets.length && !this.isPushingNet) {
             this.isPushingNet = true;
             setTimeout(()=>{
+                this.nets.push(new Net(this.gameScreen))
+                this.nets.push(new Net(this.gameScreen))
+                this.nets.push(new Net(this.gameScreen))
                 this.nets.push(new Net(this.gameScreen))
                 this.isPushingNet = false
             }, 100)
@@ -469,7 +479,29 @@ class Game {
         this.gameScreen.style.display = 'none'
 
         //Show end game screen
+        
         this.gameEndScreen.style.display = "block"
+    }
+
+    winGame(){
+        //remove player
+        this.player.element.remove()
+
+        //remove all obstacles from the array of obstacles
+        this.obstacles.forEach(obstacle => {
+            obstacle.element.remove()
+        })
+        
+        this.obstacles =[]
+        this.gameIsOver = true
+
+        //hide the game screen
+
+        this.gameScreen.style.display = 'none'
+
+        //Show end game screen
+        
+        this.gameWinScreen.style.display = "block"
     }
 
 }

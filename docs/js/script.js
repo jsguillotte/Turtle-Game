@@ -1,6 +1,13 @@
 window.onload = function () {
+    const easyButton = document.getElementById("easy")
     const startButton = document.getElementById("start-button");
     const restartButton = document.getElementById("restart-button");
+    const winButton = document.getElementById("win-button")
+    easyButton.addEventListener('click', function() {
+      document.getElementById('game-intro').style.display= 'none';
+      document.getElementById('game-info').style.display = 'block';
+      
+    })
   
     startButton.addEventListener("click", function () {
       startGame();
@@ -9,6 +16,9 @@ window.onload = function () {
     let game;
   
     restartButton.addEventListener('click', function(){
+      location.reload()
+    })
+    winButton.addEventListener('click', function(){
       location.reload()
     })
    
@@ -21,7 +31,7 @@ window.onload = function () {
       //Function that handles keydown events
       function handleKeydown(event){
         const key = event.key;
-        const possibleKeystrokes = ['ArrowLeft', 'ArrowUp', 'ArrowRight', 'ArrowDown']
+        const possibleKeystrokes = ['ArrowLeft', 'ArrowUp', 'ArrowRight']
        
         // Check if the pressed key belongs to the array of possible keys 
         if(possibleKeystrokes.includes(key)){
@@ -49,9 +59,7 @@ window.onload = function () {
               game.player.directionX = 1;
               break;
   
-           case "ArrowDown":
-              game.player.directionY = 1;
-              break 
+    
              
   
           }
@@ -94,9 +102,7 @@ window.onload = function () {
             break;
   
           
-         case "ArrowDown":
-            game.player.directionY = 0;
-            break; 
+        
   
         }
       }

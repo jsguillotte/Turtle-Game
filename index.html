@@ -11,21 +11,32 @@
     <main>
       <!-- #game-intro is initially shown on the game start screen -->
       <div id="game-intro">
-        <img src="docs/images/Intro.jpeg" alt="" class="logo-img" />
-        <br />
-        <button id="start-button">Easy</button>
+       
+        <button id="easy">Easy</button>
         <button id="hard">Hard</button>
         
       </div>
+      <div id="game-info">
+        <!-- <img src="./images/GameOver.jpeg" alt="" class="logo-img" /> 
+       <h1>Game Over</h1> -->
+ 
+      
+        <button id="start-button">start</button>
+       
+       </div>
 
       <div id="game-container">
-        <div>
-          <h2>Stats</h2>
+        
+        <!-- #game-screen is initially hidden using CSS style display: none -->
+        <div id="game-screen">
+
+        <div id="stats">
+          
           <p>Timer: <span id="timer">30</span></p>
           <p>Lives: <span id="lives">3</span></p>
         </div>
-        <!-- #game-screen is initially hidden using CSS style display: none -->
-        <div id="game-screen"></div>
+        
+      
       </div>
 
       <!-- #game-end is initially hidden using CSS style display: none -->
@@ -33,8 +44,20 @@
        <!-- <img src="./images/GameOver.jpeg" alt="" class="logo-img" /> 
       <h1>Game Over</h1> -->
 
+     
        <button id="restart-button">Restart</button>
+      
       </div>
+
+      <div id="game-win">
+        <!-- <img src="./images/GameOver.jpeg" alt="" class="logo-img" /> 
+       <h1>Game Over</h1> -->
+ 
+      
+        <button id="win-button">Restart</button>
+       
+       </div>
+    
     </main>
 
     <script type="text/javascript" src="docs/js/player.js"></script>
