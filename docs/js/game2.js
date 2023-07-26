@@ -12,7 +12,7 @@ class Game2 {
 
         // player
         this.player = new Player(
-            this.gameScreen, 700, 700, 50, 75, "docs/images/turtle.png"
+            this.gameScreen, 700, 750, 60, 85, "docs/images/turtle.png"
         );
 
         // style for the game board
@@ -51,10 +51,19 @@ class Game2 {
         this.score = 30;
 
         // lives
-        this.lives = 3;
+        this.lives = 13;
 
         // gameOver flag
         this.gameOver = false;
+
+        this.starAudio = new Audio("./docs/audio/star-sound.mp3")
+        this.starRedAudio = new Audio("./docs/audio/star-sound.mp3")
+        this.bossAudio = new Audio("./docs/audio/bossBaby-sound.mp3")
+        this.catAudio = new Audio("./docs/audio/cat-sound.mp3")
+        this.dogAudio = new Audio("./docs/audio/dog-sound.mp3")
+        this.birdAudio = new Audio("./docs/audio/seagull-sound.mp3")
+        this.obstAudio = new Audio("./docs/audio/obstacle.mp3")
+        this.netAudio = new Audio("./docs/audio/net-sound.wav")
     
     }
 
@@ -132,6 +141,7 @@ class Game2 {
                 this.obstacles.splice(i,1)
 
                 //reduce player's live by 1
+                this.bossAudio.play()
                 this.lives --
                 
 
@@ -164,6 +174,7 @@ class Game2 {
                 this.seagulls.splice(i,1)
 
                 //reduce player's live by 1
+                this.birdAudio.play()
                 this.lives --
                 
  
@@ -191,6 +202,7 @@ class Game2 {
                 this.dogs.splice(i,1)
 
                 //reduce player's live by 1
+                this.dogAudio.play()
                 this.lives --
                 
  
@@ -217,6 +229,7 @@ class Game2 {
                 this.cats.splice(i,1)
 
                 //reduce player's live by 1
+                this.catAudio.play()
                 this.lives --
                 
  
@@ -243,6 +256,7 @@ class Game2 {
                 this.cups2.splice(i,1)
 
                 //reduce player's live by 1
+                this.obstAudio.play()
                 this.lives --
                 
  
@@ -265,6 +279,7 @@ class Game2 {
                 this.trashes.splice(i, 1)
 
                 //reduce player's live by 1
+                this.obstAudio.play()
                 this.lives --
                 
  
@@ -286,6 +301,7 @@ class Game2 {
                 this.trashes2.splice(i, 1)
 
                 //reduce player's live by 1
+                this.obstAudio.play()
                 this.lives --
                 
  
@@ -312,6 +328,7 @@ class Game2 {
                 this.bstars.splice(i,1)
 
                 //reduce player's live by 1
+                this.starAudio.play()
                 this.score+=5
                 
  
@@ -338,6 +355,8 @@ class Game2 {
                 this.rstars.splice(i,1)
 
                 //reduce player's live by 1
+                //this.starAudio.play()
+                this.starRedAudio.play()
                 this.lives++
                 
  
@@ -364,6 +383,7 @@ class Game2 {
                 this.nets.splice(i, 1)
 
                 //reduce player's live by 1
+                this.netAudio.play()
                 this.score -= 3
                 
  
@@ -472,11 +492,11 @@ class Game2 {
         this.player.element.remove()
 
         //remove all obstacles from the array of obstacles
-        this.obstacles.forEach(obstacle => {
+      /*  this.obstacles.forEach(obstacle => {
             obstacle.element.remove()
         })
         
-        this.obstacles =[]
+        this.obstacles =[]*/
         this.gameIsOver = true
 
         //hide the game screen

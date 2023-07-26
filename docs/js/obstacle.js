@@ -380,7 +380,7 @@ class Net {
 
     //create the HTML element and default styling
     this.element = document.createElement('img')
-    this.element.src = 'docs/images/net2.png';
+    this.element.src = 'docs/images/net.png';
     this.element.style.position = 'absolute'
     this.element.style.top = `${this.top}px`
     this.element.style.left = `${this.left}px`

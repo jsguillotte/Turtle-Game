@@ -17,14 +17,15 @@ body {
   #game-container {
     display: flex;
     width: 100%;
-    padding: 20px 0px;
+    margin: 0;
     justify-content: center;
   }
   #stats {
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: flex-start;
     gap: 15px;
+    margin-right: 40px
 
 
   }
@@ -33,7 +34,7 @@ body {
     display: none;
     align-content: center;
     width: 100%;
-    padding: 20px 0px;
+    /*padding: 20px 0px;*/
     overflow: hidden;
     position: relative;
     background-image: url(/docs/images/Beach.png);
@@ -41,7 +42,7 @@ body {
     /*animation: slide 5s linear infinite;*/
   }
  
-  
+  /*
   @keyframes slide {
     0% {
       background-position: 0 -1000px;
@@ -52,7 +53,7 @@ body {
     100% {
       background-position: 0 50px;
     }
-  }
+  }*/
   
   #game-end {
     display: none;
@@ -92,7 +93,7 @@ body {
   #game-win {
     display: none;
     width: 100%;
-    padding: 380px;
+    padding: 410px;
     background-image: url(/docs/images/game-win.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -116,8 +117,8 @@ body {
   }
   #restart-button{
     position: absolute;
-    top: 70%;
-    left: 50%
+    top: 700px;
+    left: 700px;
   }
   #win-button{
     position: absolute;
@@ -128,15 +129,15 @@ body {
   
    #hard {
     position: absolute;
-    top: 70%;
-    left: 60%;
+    top: 600px;
+    left: 800px;
 
     
   }
   #easy {
     position: absolute;
-    top: 70%;
-    left: 40%;
+    top: 600px;
+    left: 550px;
 
     
   }
@@ -156,6 +157,13 @@ body {
     width: 30px;
     height: 30px
   
+  }
+  #lives, #timer {
+    color: white;
+    font-size: 30px;
+    margin: 5px;
+
+
   }
 
   

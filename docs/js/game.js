@@ -13,7 +13,7 @@ class Game {
 
         // player
         this.player = new Player(
-            this.gameScreen, 700, 700, 50, 75, "docs/images/turtle.png"
+            this.gameScreen, 700, 750, 60, 85, "docs/images/turtle.png"
         );
 
         // style for the game board
@@ -60,6 +60,7 @@ class Game {
         this.bossAudio = new Audio("./docs/audio/bossBaby-sound.mp3")
         this.catAudio = new Audio("./docs/audio/cat-sound.mp3")
         this.dogAudio = new Audio("./docs/audio/dog-sound.mp3")
+        this.obstAudio = new Audio("./docs/audio/obstacle.mp3")
     
     }
 
@@ -258,6 +259,7 @@ class Game {
                 this.cups2.splice(i,1)
 
                 //reduce player's live by 1
+                this.obstAudio.play()
                 this.lives --
                 
  
@@ -280,6 +282,7 @@ class Game {
                 this.trashes.splice(i, 1)
 
                 //reduce player's live by 1
+                this.obstAudio.play()
                 this.lives --
                 
  
@@ -301,6 +304,7 @@ class Game {
                 this.trashes2.splice(i, 1)
 
                 //reduce player's live by 1
+                this.obstAudio.play()
                 this.lives --
                 
  
