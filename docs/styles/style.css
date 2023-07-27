@@ -45,7 +45,7 @@ body {
     display: none;
     width: 100%;
     padding: 410px;
-    background-image: url(./docs/images/GameOver.jpeg);
+    background-image: url('https://i.ibb.co/nDv1zhn/GameOver.jpg');
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -58,7 +58,7 @@ body {
   }
   #game-info {
     display: none;
-    background-image: url(./docs/images/game-info.jpeg);
+    background-image: url('https://i.ibb.co/DLnsvV1/game-info.jpg');
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -67,7 +67,7 @@ body {
 
   #info-hard {
     display: none;
-    background-image: url(./docs/images/info-hard.jpeg);
+    background-image: url('https://i.ibb.co/cgkR5Rg/info-hard.jpg');
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -78,7 +78,7 @@ body {
     display: none;
     width: 100%;
     padding: 410px;
-    background-image: url(./docs/images/game-win.jpeg);
+    background-image: url('https://i.ibb.co/B2nS4W6/game-win.jpg');
     background-size: cover;
     background-repeat: no-repeat;
   }
