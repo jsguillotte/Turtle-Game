@@ -50,7 +50,7 @@ body {
     background-repeat: no-repeat;
   }
   #game-intro {
-    background-image: url(./docs/images/Intro.jpeg);
+    background-image: url('https://i.ibb.co/CbJRKv1/Intro.jpg');
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
