@@ -35,13 +35,13 @@ class Player{
 
     }
     move(){
-        // Update player's car position based on directionX and direction Y
+        // Update player's position based on directionX and direction Y
 
         this.left+=this.directionX
         this.top+=this.directionY
 
 
-        //Ensure the player's car stays inside the game screen
+        //Ensure the player stays inside the game screen
 
         //handle left and right borders
         // .offSetWidth() returns the width of an element in data type number

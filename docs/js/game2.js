@@ -45,16 +45,18 @@ class Game2 {
         this.isPushingNet = false
         
 
-        //{trees: [], rocks: []}
+        
 
-        // score
-        this.score = 30;
+        // timer
+        this.timer = 30;
 
         // lives
-        this.lives = 13;
+        this.lives = 3;
 
         // gameOver flag
         this.gameOver = false;
+
+        //collision sound effects
 
         this.starAudio = new Audio("./docs/audio/star-sound.mp3")
         this.starRedAudio = new Audio("./docs/audio/star-sound.mp3")
@@ -78,9 +80,15 @@ class Game2 {
         //Show the Game Screen
 
         this.gameScreen.style.display = 'block'
+
+        //set timer for the game 
+
         setInterval(()=>{
-            return this.score--
+            return this.timer--
         }, 1000)
+
+        //background music
+
         this.backgroundMusic = document.createElement('audio');
         this.backgroundMusic.src = "./docs/audio/gametrack.mp3"
         this.gameScreen.appendChild(this.backgroundMusic)
@@ -90,41 +98,47 @@ class Game2 {
         this.gameLoop()
     }
 
-    //Creating an Animation Function
+    //Creating an Game Loop function
     gameLoop(){
         console.log('Game Loop')
 
-        //Check if the game's over to interrrups the game loop
+        //Check if the game's over to interrrupt the game loop
         if(this.gameIsOver){
             return;
         }
 
         this.update()
 
-       // this.frame ++;
-      //console.log(this.frames)
-
     window.requestAnimationFrame(()=>this.gameLoop())
 
     } 
 
     update(){
-        //Bonus: scores and lives
+        //timer and lives
 
-        let score = document.getElementById('timer')
+        let timer = document.getElementById('timer')
         let lives = document.getElementById('lives')
 
-        score.innerHTML = this.score
+        timer.innerHTML = this.timer
         lives.innerHTML = this.lives
 
-        if(this.lives === 0 || this.score <= 0) {
+        //condidition for losing
+
+        if(this.lives === 0 || this.timer <= 0) {
+            this.bossAudio.play()
             this.endGame()
+
+
+        //condition for winning
+
         } else if (this.player.top < 35) {
+            this.starAudio.play()
             this.winGame()
         }
 
         this.player.move()
 
+        //obstacle baby boss
         // Check for collision and if an obstacle is still on the screen
         for (let i=0; i < this.obstacles.length; i++){
             const obstacle = this.obstacles[i]
@@ -140,14 +154,16 @@ class Game2 {
                 //remove obstacle from the array
                 this.obstacles.splice(i,1)
 
-                //reduce player's live by 1
+                //collision sound effect
                 this.bossAudio.play()
+
+                //reduce player's live by 1
                 this.lives --
                 
 
             }
 
-            //Check if the obstacle is off the screen (at the bottom)
+            //Check if the obstacle is off the screen (on the right)
 
             else if(obstacle.left > this.width) {
                 obstacle.element.remove()
@@ -158,6 +174,8 @@ class Game2 {
        
 
         }
+
+        //obstacle seagull
 
        for (let i=0; i < this.seagulls.length; i++){
             const seagull = this.seagulls[i]
@@ -173,11 +191,14 @@ class Game2 {
                 //remove obstacle from the array
                 this.seagulls.splice(i,1)
 
-                //reduce player's live by 1
+                //collision sound effect
                 this.birdAudio.play()
+
+                //reduce player's live by 1
                 this.lives --
                 
- 
+            //Check if the obstacle is off the screen (on the bottom)
+
             } else if(seagull.top > this.height){
                 seagull.element.remove()
                 this.seagulls.splice(i, 1)
@@ -186,7 +207,7 @@ class Game2 {
 
         }    
 
-
+        //obstacle dog
         for (let i=0; i < this.dogs.length; i++){
             const dog = this.dogs[i]
             dog.move()
@@ -201,10 +222,13 @@ class Game2 {
                 //remove obstacle from the array
                 this.dogs.splice(i,1)
 
-                //reduce player's live by 1
+                //collision sound effect
                 this.dogAudio.play()
+
+                //reduce player's live by 1
                 this.lives --
-                
+            
+            //Check if the obstacle is off the screen (on the left)
  
             } else if(dog.right > this.width){
                 dog.element.remove()
@@ -213,6 +237,8 @@ class Game2 {
             }
 
         }  
+
+        //cat obstacle
 
         for (let i=0; i < this.cats.length; i++){
             const cat = this.cats[i]
@@ -228,11 +254,13 @@ class Game2 {
                 //remove obstacle from the array
                 this.cats.splice(i,1)
 
-                //reduce player's live by 1
+                //cat sound effect
                 this.catAudio.play()
+                //reduce player's live by 1
                 this.lives --
                 
- 
+            //Check if the obstacle is off the screen (on the left)    
+
             } else if(cat.right > this.width){
                 cat.element.remove()
                 this.cats.splice(i, 1)
@@ -243,7 +271,7 @@ class Game2 {
 
         for (let i=0; i < this.cups2.length; i++){
             const cup2 = this.cups2[i]
-            cup2.move()
+            //cup2.move()
             
 
 
@@ -266,10 +294,8 @@ class Game2 {
 
         for (let i=0; i < this.trashes.length; i++){
             const trash = this.trashes[i]
-            trash.move()
             
-
-
+            
             //Check if the player collided with an obstacle
             if (this.player.didCollide(trash)){
                 //remove the obstacle from the DOM
@@ -278,8 +304,10 @@ class Game2 {
                 //remove obstacle from the array
                 this.trashes.splice(i, 1)
 
-                //reduce player's live by 1
+                
+                //collision sound effect
                 this.obstAudio.play()
+                //reduce player's live by 1
                 this.lives --
                 
  
@@ -288,7 +316,7 @@ class Game2 {
         }  
         for (let i=0; i < this.trashes2.length; i++){
             const trash2 = this.trashes2[i]
-            trash2.move()
+            //trash2.move()
             
 
 
@@ -305,11 +333,7 @@ class Game2 {
                 this.lives --
                 
  
-            } /*else if(trash.right > trash.width){
-                trash.element.remove()
-                this.trashes.splice(i, 1)
-
-            } */
+            } 
 
         }  
 
@@ -327,10 +351,13 @@ class Game2 {
                 //remove obstacle from the array
                 this.bstars.splice(i,1)
 
-                //reduce player's live by 1
+                //collision sound effect
                 this.starAudio.play()
-                this.score+=5
-                
+
+                //increase timer by 3s
+                this.timer+=3
+            
+            //check if the obstacle is off the screen(bottom)
  
             } else if(bStar.top > this.height){
                 bStar.element.remove()
@@ -339,6 +366,8 @@ class Game2 {
             }
 
         } 
+
+        //obstacle red star(live bonus)
 
         for (let i=0; i < this.rstars.length; i++){
             const rStar = this.rstars[i]
@@ -354,11 +383,14 @@ class Game2 {
                 //remove obstacle from the array
                 this.rstars.splice(i,1)
 
-                //reduce player's live by 1
-                //this.starAudio.play()
-                this.starRedAudio.play()
-                this.lives++
                 
+                //collision sound effect
+                this.starRedAudio.play()
+
+                //increase player's live by 1
+                this.lives++
+
+            //check if the obstacle is of the screen(bottom)  
  
             } else if(rStar.top > this.height){
                 rStar.element.remove()
@@ -367,6 +399,8 @@ class Game2 {
             }
 
         } 
+
+        //obstacle Net(time deduction)
 
         for (let i=0; i < this.nets.length; i++){
             const net = this.nets[i]
@@ -382,9 +416,11 @@ class Game2 {
                 //remove obstacle from the array
                 this.nets.splice(i, 1)
 
-                //reduce player's live by 1
+                //collision sound effect
                 this.netAudio.play()
-                this.score -= 3
+
+                //reduce timer by 3
+                this.timer -= 3
                 
  
             } 
@@ -427,33 +463,33 @@ class Game2 {
 
         if(!this.cups2.length && !this.isPushingCup2) {
             this.isPushingCup2 = true;
-            setTimeout(()=>{
-                this.cups2.push(new Cup2(this.gameScreen))
-                this.cups2.push(new Cup2(this.gameScreen))
-                this.cups2.push(new Cup2(this.gameScreen))
+            
+                this.cups2.push(new Cup(this.gameScreen))
+                this.cups2.push(new Cup(this.gameScreen))
+                this.cups2.push(new Cup(this.gameScreen))
                 this.isPushingCup2 = false
-            }, 100)
+            
         }
 
 
        if(!this.trashes.length && !this.isPushingTrash) {
             this.isPushingTrash = true;
-            setTimeout(()=>{
+            
                 this.trashes.push(new Trash(this.gameScreen))
                 this.trashes.push(new Trash(this.gameScreen))
                 this.trashes.push(new Trash(this.gameScreen))
                 this.isPushingTrash = false
-            }, 100)
+            
         } 
 
         if(!this.trashes2.length && !this.isPushingTrash2) {
             this.isPushingTrash2 = true;
-            setTimeout(()=>{
+        
                 this.trashes2.push(new Trash2(this.gameScreen))
                 this.trashes2.push(new Trash2(this.gameScreen))
                 this.trashes2.push(new Trash2(this.gameScreen))
                 this.isPushingTrash2 = false
-            }, 100)
+            
         } 
 
         if(!this.bstars.length && !this.isPushingBstar) {
@@ -474,13 +510,13 @@ class Game2 {
 
         if(!this.nets.length && !this.isPushingNet) {
             this.isPushingNet = true;
-            setTimeout(()=>{
+           
                 this.nets.push(new Net(this.gameScreen))
                 this.nets.push(new Net(this.gameScreen))
                 this.nets.push(new Net(this.gameScreen))
                 this.nets.push(new Net(this.gameScreen))
                 this.isPushingNet = false
-            }, 100)
+            
         }
 
 
@@ -491,12 +527,6 @@ class Game2 {
         //remove player
         this.player.element.remove()
 
-        //remove all obstacles from the array of obstacles
-      /*  this.obstacles.forEach(obstacle => {
-            obstacle.element.remove()
-        })
-        
-        this.obstacles =[]*/
         this.gameIsOver = true
 
         //hide the game screen

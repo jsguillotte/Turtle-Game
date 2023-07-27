@@ -1,3 +1,5 @@
+
+// seagull obstacle(hard level)
 class Seagull {
     constructor(gameScreen){
         this.gameScreen = gameScreen;
@@ -35,10 +37,9 @@ class Seagull {
         this.updatePosition()
     }
 
-
-
 }
 
+// boss baby obstacle
 class Obstacle {
     constructor(gameScreen){
         this.gameScreen = gameScreen;
@@ -78,6 +79,7 @@ class Obstacle {
 
 }
 
+//dog obstacle
 class Dog {
     constructor(gameScreen){
         this.gameScreen = gameScreen;
@@ -87,7 +89,7 @@ class Dog {
 
     
 
-    //appear on the left
+    //appear on the right
 
     this.right = 0;
     this.width = 90;
@@ -119,6 +121,7 @@ class Dog {
 
 }
 
+//cat obstacle
 class Cat {
     constructor(gameScreen){
         this.gameScreen = gameScreen;
@@ -128,7 +131,7 @@ class Cat {
 
     
 
-    //appear on the left
+    //appear on the right
 
     this.right =  0;
     this.width = 90;
@@ -158,21 +161,18 @@ class Cat {
     
 }
 
-class Cup2 {
+//Cup obstacle
+class Cup {
     constructor(gameScreen){
         this.gameScreen = gameScreen;
 
         //random position for the appearance of the obstacles
         this.top = Math.floor((Math.random()*500+100))
-        this.right = Math.floor((Math.random()*800+100))
+        this.left = Math.floor((Math.random()*900+100))
 
-    
-
-    //appear on the left
-
-    
-    this.width = 80;
-    this.height = 100;
+       //obstacle size
+        this.width = 80;
+        this.height = 100;
 
     //create the HTML element and default styling
     this.element = document.createElement('img')
@@ -187,16 +187,14 @@ class Cup2 {
     }
 
     updatePosition(){
-        this.element.style.right = `${this.right}px`
+        this.element.style.left = `${this.left}px`
         this.element.style.top = `${this.top}px`
     }
 
-   move(){
-        this.left += 0;
-        this.updatePosition()
-    }
     
 }
+
+// trash obstacle
 
 class Trash {
     constructor(gameScreen){
@@ -204,66 +202,22 @@ class Trash {
 
         //random position for the appearance of the obstacles
         this.top = Math.floor((Math.random()*500+100))
-        this.right = Math.floor((Math.random()*800+100))
+        this.left = Math.floor((Math.random()*900+100))
 
-    
-
-    //appear on the right
-
-    
-    this.width = 100;
-    this.height = 60;
+    //obstacle size
+        this.width = 100;
+        this.height = 60;
 
     //create the HTML element and default styling
-    this.element = document.createElement('img')
-    this.element.src = 'docs/images/Trash.png';
-    this.element.style.position = 'absolute'
-    this.element.style.top = `${this.top}px`
-    this.element.style.left = `${this.left}px`
-    this.element.style.height = `${this.height}px`
-    this.element.style.width = `${this.width}px`
-
-    this.gameScreen.appendChild(this.element)
-    }
-
-    updatePosition(){
-        this.element.style.right = `${this.right}px`
+        this.element = document.createElement('img')
+        this.element.src = 'docs/images/Trash.png';
+        this.element.style.position = 'absolute'
         this.element.style.top = `${this.top}px`
-    }
+        this.element.style.left = `${this.left}px`
+        this.element.style.height = `${this.height}px`
+        this.element.style.width = `${this.width}px`
 
-   move(){
-        this.left += 0;
-        this.updatePosition()
-    }
-    
-}
-class Trash2 {
-    constructor(gameScreen){
-        this.gameScreen = gameScreen;
-
-        //random position for the appearance of the obstacles
-        this.top = Math.floor((Math.random()*500+100))
-        this.left=Math.floor((Math.random()*800+100))
-
-    
-
-    //appear on the left
-
-   // this.left = 200;
-   // this.right = 200;
-    this.width = 100;
-    this.height = 80;
-
-    //create the HTML element and default styling
-    this.element = document.createElement('img')
-    this.element.src = 'docs/images/shoe.png';
-    this.element.style.position = 'absolute'
-    this.element.style.top = `${this.top}px`
-    this.element.style.left = `${this.left}px`
-    this.element.style.height = `${this.height}px`
-    this.element.style.width = `${this.width}px`
-
-    this.gameScreen.appendChild(this.element)
+        this.gameScreen.appendChild(this.element)
     }
 
     updatePosition(){
@@ -271,13 +225,43 @@ class Trash2 {
         this.element.style.top = `${this.top}px`
     }
 
-   move(){
-        this.left += 0;
-        this.updatePosition()
+}
+
+//shoes obstacle
+class Trash2 {
+    constructor(gameScreen){
+        this.gameScreen = gameScreen;
+
+        //random position for the appearance of the obstacles
+        this.top = Math.floor((Math.random()*500+100))
+        this.left=Math.floor((Math.random()*900+100))
+
+        //obstacle size
+
+        this.width = 100;
+        this.height = 80;
+
+        //create the HTML element and default styling
+        this.element = document.createElement('img')
+        this.element.src = 'docs/images/shoe.png';
+        this.element.style.position = 'absolute'
+        this.element.style.top = `${this.top}px`
+        this.element.style.left = `${this.left}px`
+        this.element.style.height = `${this.height}px`
+        this.element.style.width = `${this.width}px`
+
+        this.gameScreen.appendChild(this.element)
     }
+
+    updatePosition(){
+        this.element.style.left = `${this.left}px`
+        this.element.style.top = `${this.top}px`
+    }
+
     
 }
 
+//blue star obstacle(time bonus)
 class StarBlue {
     constructor(gameScreen){
         this.gameScreen = gameScreen;
@@ -290,6 +274,9 @@ class StarBlue {
     //appear on top
 
     this.top = 0;
+
+    //obstacle size
+
     this.width = 50;
     this.height = 50;
 
@@ -319,6 +306,7 @@ class StarBlue {
 
 }
 
+//red star obstacle(life bonus)
 class StarRed {
     constructor(gameScreen){
         this.gameScreen = gameScreen;
@@ -331,6 +319,8 @@ class StarRed {
     //appear on top
 
     this.top = 0;
+
+    //obstacle size
     this.width = 50;
     this.height = 50;
 
@@ -354,40 +344,36 @@ class StarRed {
     move(){
         this.top += 3;
         this.updatePosition()
-    }
+    } 
 
 
 
 }
 
+//net obstacle(hard level, time deduction)
 class Net {
     constructor(gameScreen){
         this.gameScreen = gameScreen;
 
         //random position for the appearance of the obstacles
-        this.left = Math.floor((Math.random()*800+150))
-        this.top = Math.floor((Math.random()*600)+150)
-        
-        
+        this.left = Math.floor((Math.random()*900+100))
+        this.top = Math.floor((Math.random()*600)+100)
 
-    
+        //obstacle size
 
-    //appear on top
+        this.width = 100;
+        this.height = 100;
 
-    
-    this.width = 100;
-    this.height = 100;
+        //create the HTML element and default styling
+        this.element = document.createElement('img')
+        this.element.src = 'docs/images/net.png';
+        this.element.style.position = 'absolute'
+        this.element.style.top = `${this.top}px`
+        this.element.style.left = `${this.left}px`
+        this.element.style.height = `${this.height}px`
+        this.element.style.width = `${this.width}px`
 
-    //create the HTML element and default styling
-    this.element = document.createElement('img')
-    this.element.src = 'docs/images/net.png';
-    this.element.style.position = 'absolute'
-    this.element.style.top = `${this.top}px`
-    this.element.style.left = `${this.left}px`
-    this.element.style.height = `${this.height}px`
-    this.element.style.width = `${this.width}px`
-
-    this.gameScreen.appendChild(this.element)
+        this.gameScreen.appendChild(this.element)
     }
 
   updatePosition(){

@@ -1,7 +1,5 @@
 window.onload = function () {
     
-    //const myaudio = document.getElementById('audioID'.autoplay)= true
-
     const hardButton = document.getElementById("hard")
     const easyButton = document.getElementById("easy")
     const startButton = document.getElementById("start-button");
@@ -77,10 +75,7 @@ window.onload = function () {
             
             case "ArrowRight":
               game.player.directionX = 1;
-              break;
-  
-    
-             
+              break;  
   
           }
         }
@@ -121,8 +116,6 @@ window.onload = function () {
             game.player.directionX = 0;
             break;
   
-          
-        
   
         }
       }
@@ -130,8 +123,6 @@ window.onload = function () {
     }  
      
   }
-  
-  
   
   // Associate the handleKeydown function with an Event listener
     window.addEventListener('keydown', handleKeydown)

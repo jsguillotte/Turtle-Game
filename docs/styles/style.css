@@ -9,7 +9,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
    
-    
   }
   
   
@@ -17,9 +16,9 @@ body {
   #game-container {
     display: flex;
     width: 100%;
-    margin: 0;
     justify-content: center;
   }
+
   #stats {
     display: flex;
     justify-content: flex-end;
@@ -34,31 +33,18 @@ body {
     display: none;
     align-content: center;
     width: 100%;
-    /*padding: 20px 0px;*/
+    padding: 11px;
     overflow: hidden;
     position: relative;
     background-image: url(/docs/images/Beach.png);
     background-size: cover;
-    /*animation: slide 5s linear infinite;*/
+    
   }
- 
-  /*
-  @keyframes slide {
-    0% {
-      background-position: 0 -1000px;
-    }
-    95% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: 0 50px;
-    }
-  }*/
-  
+   
   #game-end {
     display: none;
     width: 100%;
-    padding: 380px;
+    padding: 410px;
     background-image: url(/docs/images/GameOver.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -88,8 +74,6 @@ body {
     padding: 420px 0;
   }
 
-
-
   #game-win {
     display: none;
     width: 100%;
@@ -99,10 +83,6 @@ body {
     background-repeat: no-repeat;
   }
  
-  
-  
-  
-  
   body button {
     font-size: 15px;
     background-color: #97bed1;
@@ -115,11 +95,13 @@ body {
     margin-bottom: 20px;
     position: relative;
   }
+
   #restart-button{
     position: absolute;
-    top: 700px;
-    left: 700px;
+    top: 600px;
+    left: 900px;
   }
+
   #win-button{
     position: absolute;
     top: 600px;
@@ -131,15 +113,12 @@ body {
     position: absolute;
     top: 600px;
     left: 800px;
-
-    
   }
+
   #easy {
     position: absolute;
     top: 600px;
     left: 550px;
-
-    
   }
 
   #start-button {
@@ -147,6 +126,7 @@ body {
     top: 700px;
     left: 650px;
   }
+
   #start-button-hard {
     position: absolute;
     top: 700px;
@@ -156,15 +136,16 @@ body {
   #live, #time{
     width: 30px;
     height: 30px
-  
   }
+
   #lives, #timer {
     color: white;
     font-size: 30px;
     margin: 5px;
-
-
   }
-
+   button:hover {
+    background-color: #419fce;
+  
+   }
   
   
