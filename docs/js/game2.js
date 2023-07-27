@@ -124,7 +124,7 @@ class Game2 {
 
         //condidition for losing
 
-        if(this.lives === 0 || this.timer <= 0) {
+        if(this.lives <= 0 || this.timer <= 0) {
             this.bossAudio.play()
             this.endGame()
 

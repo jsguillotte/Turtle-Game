@@ -10,6 +10,8 @@ class Game {
         this.gameScreen = document.getElementById('game-screen')
         this.gameEndScreen = document.getElementById('game-end')
         this.gameWinScreen = document.getElementById('game-win')
+        this.backScreen = document.getElementsByTagName("body")
+        
         
 
         // player
@@ -129,7 +131,7 @@ class Game {
 
         //condition for game over 
 
-        if(this.lives === 0 || this.timer <= 0) {
+        if(this.lives <= 0 || this.timer <= 0) {
             this.bossAudio.play()
             this.endGame()
         } 
