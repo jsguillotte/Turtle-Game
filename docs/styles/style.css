@@ -5,7 +5,7 @@ body {
     padding: 0;
     margin: 0;
     text-align: center;
-    background-image: url(/docs/images/Beach.png);
+    background-image: url(./docs/images/Beach.png);
     background-repeat: no-repeat;
     background-size: cover;
    
@@ -36,7 +36,7 @@ body {
     padding: 11px;
     overflow: hidden;
     position: relative;
-    background-image: url(/docs/images/Beach.png);
+    background-image: url(./docs/images/Beach.png);
     background-size: cover;
     
   }
@@ -45,12 +45,12 @@ body {
     display: none;
     width: 100%;
     padding: 410px;
-    background-image: url(/docs/images/GameOver.jpeg);
+    background-image: url(./docs/images/GameOver.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
   }
   #game-intro {
-    background-image: url(/docs/images/Intro.jpeg);
+    background-image: url(./docs/images/Intro.jpeg);
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -58,7 +58,7 @@ body {
   }
   #game-info {
     display: none;
-    background-image: url(/docs/images/game-info.jpeg);
+    background-image: url(./docs/images/game-info.jpeg);
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -67,7 +67,7 @@ body {
 
   #info-hard {
     display: none;
-    background-image: url(/docs/images/info-hard.jpeg);
+    background-image: url(./docs/images/info-hard.jpeg);
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -78,7 +78,7 @@ body {
     display: none;
     width: 100%;
     padding: 410px;
-    background-image: url(/docs/images/game-win.jpeg);
+    background-image: url(./docs/images/game-win.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
   }
