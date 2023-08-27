@@ -6,6 +6,8 @@ Players control the turtle's movements using arrow keys, aiming to navigate it t
 		Easy Level: Moving and static obstacles are spread out, impact with an obstacle results in loss of 1 life. Possibility to catch a bonus(Blue starfish) for extra time.
 		Hard Level: Obstacles are more frequent and complex, coming from different directions. Impact with an obstacle Net removes 3 seconds from the timer. Additional bonus(red starfish) of extra life.
 "Turtle Tides» is an interactive browser-based game where players guide a courageous turtle through challenging obstacles on its journey to the ocean. The game offers two levels of difficulty and employs an object-oriented programming (OOP) approach using HTML, CSS, and JavaScript.
+
+
 **Features**
 	•	Two levels of difficulty: Easy and Hard.
 	•	Visually appealing graphics, audio effects and user-friendly interface.
