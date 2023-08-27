@@ -1,4 +1,4 @@
-# Turtle-Game
+# Turtle-Tides
 "Turtle Tides» is an interactive browser-based game where players guide a courageous turtle through challenging obstacles on its journey to the ocean. The game offers two levels of difficulty and employs an object-oriented programming (OOP) approach using HTML, CSS, and JavaScript.
 
 **Gameplay**
