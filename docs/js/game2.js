@@ -7,6 +7,7 @@ class Game2 {
         // game-screen and game-end are initially hidden
         this.startScreen = document.getElementById('info-hard');
         this.gameScreen = document.getElementById('game-screen')
+        this.gameScreenBack = document.getElementById('game-screen-back')
         this.gameEndScreen = document.getElementById('game-end')
         this.gameWinScreen = document.getElementById('game-win')
 
@@ -18,7 +19,7 @@ class Game2 {
         // style for the game board
 
         this.width = 1400
-        this.height = 800
+        this.height = 650
 
         // obstacles
         this.obstacles = []
@@ -80,6 +81,7 @@ class Game2 {
         //Show the Game Screen
 
         this.gameScreen.style.display = 'block'
+        this.gameScreenBack.style.display = 'block'
 
         //set timer for the game 
 
@@ -134,7 +136,9 @@ class Game2 {
         } else if (this.player.top < 35) {
             this.starAudio.play()
             this.winGame()
-        }
+        } /* else if (this.lives < 0 || this.timer < 0) {
+            this.player.imgSrc = "docs/images/dog.png"
+        } */
 
         this.player.move()
 
@@ -532,6 +536,7 @@ class Game2 {
         //hide the game screen
 
         this.gameScreen.style.display = 'none'
+        this.gameScreenBack.style.display = 'none'
 
         //Show end game screen
         
@@ -553,6 +558,7 @@ class Game2 {
         //hide the game screen
 
         this.gameScreen.style.display = 'none'
+        this.gameScreenBack.style.display = 'none'
 
         //Show end game screen
         

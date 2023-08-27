@@ -357,7 +357,7 @@ class Net {
 
         //random position for the appearance of the obstacles
         this.left = Math.floor((Math.random()*900+100))
-        this.top = Math.floor((Math.random()*600)+100)
+        this.top = Math.floor((Math.random()*500)+100)
 
         //obstacle size
 

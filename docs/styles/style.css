@@ -1,22 +1,33 @@
 html {
-  height: 100%;
+  
+}
+html{
+  margin: 0 0;
 }
 body {
     padding: 0;
     margin: 0;
     text-align: center;
-    background-image: url('https://i.ibb.co/1rcyv62/Beach.png');
+   /* background-image: url('https://i.ibb.co/1rcyv62/Beach.png');
     background-repeat: no-repeat;
     background-size: cover;
-   
+   */
   }
   
   
   
-  #game-container {
-    display: flex;
+  #game-screen-back {
+    display: none;
+    background-color: bisque;
+    background-size: cover;
+    height: 100vh;
+    margin: 0 0;
+    
+    /*display: flex;
     width: 100%;
-    justify-content: center;
+    height: 100vh;
+    margin: 0 0;
+    justify-content: center;*/
   }
 
   #stats {
@@ -31,56 +42,76 @@ body {
   
   #game-screen {
     display: none;
-    align-content: center;
-    width: 100%;
-    padding: 11px;
-    overflow: hidden;
-    position: relative;
+    margin: auto;
+    width: 100vw;
+    padding: 20px;
+    border-style: solid;
+    border-color: #419fce;
     background-image: url('https://i.ibb.co/1rcyv62/Beach.png');
     background-size: cover;
+    
     
   }
    
   #game-end {
     display: none;
-    width: 100%;
-    padding: 410px;
+    width: 100vw;
+    height: 100vh;
+    background-position: center center;
     background-image: url('https://i.ibb.co/nDv1zhn/GameOver.jpg');
     background-size: cover;
     background-repeat: no-repeat;
   }
   #game-intro {
     background-image: url('https://i.ibb.co/CbJRKv1/Intro.jpg');
-    width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 420px 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background-position: center center;
+    
+    /*padding: 420px 0;*/
+  }
+  #button-intro {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 22vh;
+    margin-right: 40vw;
+    
   }
   #game-info {
     display: none;
     background-image: url('https://i.ibb.co/DLnsvV1/game-info.jpg');
-    width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 420px 0;
+    background-position: center center;
+    width: 100vw;
+    height: 100vh;
   }
 
   #info-hard {
     display: none;
     background-image: url('https://i.ibb.co/cgkR5Rg/info-hard.jpg');
-    width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 420px 0;
+    background-position: center center;
+    width: 100vw;
+    height: 100vh;
   }
 
   #game-win {
     display: none;
-    width: 100%;
-    padding: 410px;
+    width: 100vw;
+    height: 100vh;
     background-image: url('https://i.ibb.co/B2nS4W6/game-win.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center center;
+    
   }
  
   body button {
@@ -89,48 +120,52 @@ body {
     color: #fff;
     text-transform: uppercase;
     padding: 10px 50px;
-    border: 0;
+    border: 2;
+    border-color: #419fce;
     box-shadow: 0;
     border-radius: 5px;
     margin-bottom: 20px;
-    position: relative;
+    
   }
 
   #restart-button{
     position: absolute;
-    top: 600px;
-    left: 900px;
+    right: 20vw;
+    bottom: 15vh;
   }
 
   #win-button{
     position: absolute;
-    top: 600px;
-    left: 650px;
+    right: 45vw;
+    bottom: 25vh;
   }
 
   
-   #hard {
-    position: absolute;
-    top: 600px;
-    left: 800px;
+ /*  #hard {
+    position: relative;
+    
+    right: 10vw;
+    bottom: 7vh;
   }
 
   #easy {
-    position: absolute;
-    top: 600px;
-    left: 550px;
+    position: relative;
+    
+    right: 25vw;
+    bottom: 7vh;
   }
-
+*/
   #start-button {
     position: absolute;
-    top: 700px;
-    left: 650px;
+    
+    right: 45vw;
+    bottom: 7vh;
   }
 
   #start-button-hard {
     position: absolute;
-    top: 700px;
-    left: 650px;
+    right: 45vw;
+    bottom: 7vh;
   }
 
   #live, #time{

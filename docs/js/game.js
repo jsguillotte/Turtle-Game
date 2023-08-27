@@ -8,6 +8,7 @@ class Game {
         // game-screen, game-end, game-win are initially hidden
         this.startScreen = document.getElementById('game-info');
         this.gameScreen = document.getElementById('game-screen')
+        this.gameScreenBack = document.getElementById('game-screen-back')
         this.gameEndScreen = document.getElementById('game-end')
         this.gameWinScreen = document.getElementById('game-win')
         this.backScreen = document.getElementsByTagName("body")
@@ -21,8 +22,8 @@ class Game {
 
         // style for the game board
 
-        this.width = 1400
-        this.height = 800
+        this.width = 1400;
+        this.height = 650
 
         // obstacles
         this.obstacles = []
@@ -82,6 +83,7 @@ class Game {
         //Show the Game Screen
 
         this.gameScreen.style.display = 'block'
+        this.gameScreenBack.style.display = 'block'
 
         // Add background music
 
@@ -416,6 +418,7 @@ class Game {
         //hide the game screen
 
         this.gameScreen.style.display = 'none'
+        this.gameScreenBack.style.display = 'none'
 
         //Show end game screen
         
@@ -431,6 +434,8 @@ class Game {
         //hide the game screen
 
         this.gameScreen.style.display = 'none'
+        this.gameScreenBack.style.display = 'none'
+        
 
         //Show end game screen
         
